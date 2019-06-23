@@ -57,7 +57,7 @@
       https://msdn.microsoft.com/en-us/skype/websdk/developwebsdkappsforsfbonline#tenant-administrator-consent-flow
       */
       document.getElementById('AdminConsent').onclick= function(){
-        location.assign('https://login.microsoftonline.com/common/oauth2/authorize?response_type=id_token'+
+        location.assign('https://login.microsoftonline.com/common/oauth2/authorize?response_type=token'+
           '&client_id='+config.clientid+
           '&redirect_uri='+config.replyurl+
           //'&response_mode=form_post'+ //Because it is static web page and cant' handle post method, I comment out it.
@@ -138,7 +138,7 @@
          "origins": ["https://webdir.online.lync.com/autodiscover/autodiscoverservice.svc/root"],
          "cors": true,
          "version": config.appName+'/1.0.0',
-         "redirect_uri": "/index.html"
+         "redirect_uri": config.replyurl
         };
         
         client.signInManager.signIn(params).then(function(){
