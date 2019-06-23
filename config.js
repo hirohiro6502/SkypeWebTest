@@ -17,6 +17,6 @@ var config ={
     
     //Action Required : Need to set your app's specific value. Please README.MD file and follow "Update config.js" section.
     clientid : '5bb05630-b8b0-4f0d-91b9-09dcbfd69171',//client id created in Azure AD
-    replyurl : 'https://skypejts.azurewebsites.net/index.html',//replyurl you set in Azure AD
+    replyurl : 'https://skypejts.azurewebsites.net/',//replyurl you set in Azure AD
     appName : 'skypejts'//Application Name registered in Azure AD
 };
