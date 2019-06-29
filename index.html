@@ -189,7 +189,9 @@
             participants: uris
         }).then(function (conversation) {
             // Conversation Control was rendered successfully
-        
+            conversation.audioService.accept();
+            conversation.videoService.accept();
+            
             // Add additional listeners for changes to conversation state here (see below section)
         
             conversation.chatService.start().then(function () {
