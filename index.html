@@ -155,7 +155,7 @@
       */
       document.getElementById('startChat').onclick=function(){
         //show prompt in the browser
-        var input = prompt('SIP URIs of the participants:','sip:example@example.com,sip:example2@example.com');
+        var input = prompt('SIP URIs of the participants:','sip:maeda@armaker.onmicrosoft.com');
 
         if(!input)
           return;
@@ -182,7 +182,8 @@
           }, function (error) {
               // error starting chatService
           });
-        };
+        }, function (error) {
+        });
       };      
     }());
   </script>
