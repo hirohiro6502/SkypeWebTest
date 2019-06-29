@@ -169,20 +169,36 @@
           document.getElementById("conversationWindow").appendChild(container);
         }
         //render Conversation Control in a web page.
-        var promise = apiManager.renderConversation(container,{
-          //Start outgoing call with chat window
-          modalities:['Chat'],
-          participants: uris
-        }).then(function (conversation)){
-          //conversation.audioService.accept();
-          conversation.videoService.accept();
-          
-          conversation.chatService.start().then(function () {
-              // chatService started successfully
-          }, function (error) {
-              // error starting chatService
-          });
+//        var promise = apiManager.renderConversation(container,{
+//          //Start outgoing call with chat window
+//          modalities:['Chat'],
+//          participants: uris
+//        }).then(function (conversation)){
+//          //conversation.audioService.accept();
+//          conversation.videoService.accept();
+//          
+//          conversation.chatService.start().then(function () {
+//              // chatService started successfully
+//          }, function (error) {
+//              // error starting chatService
+//          });
+//        }, function (error) {
+//        });
+        apiManager.renderConversation(container, {
+            modalities: ['Chat'],
+            participants: uris
+        }).then(function (conversation) {
+            // Conversation Control was rendered successfully
+        
+            // Add additional listeners for changes to conversation state here (see below section)
+        
+            conversation.chatService.start().then(function () {
+                // chatService started successfully
+            }, function (error) {
+                // error starting chatService
+            });
         }, function (error) {
+            // error rendering Conversation Control
         });
       };      
     }());
