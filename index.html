@@ -173,7 +173,16 @@
           //Start outgoing call with chat window
           modalities:['Chat'],
           participants: uris
-        });
+        }).then(function (conversation)){
+          //conversation.audioService.accept();
+          conversation.videoService.accept();
+          
+          conversation.chatService.start().then(function () {
+              // chatService started successfully
+          }, function (error) {
+              // error starting chatService
+          });
+        };
       };      
     }());
   </script>
